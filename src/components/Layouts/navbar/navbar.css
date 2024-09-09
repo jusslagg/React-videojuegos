@@ -1,24 +1,51 @@
-import CartWidget from "../../common/cartWidget/CartWidget";
-import "./navbar.css";
-const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(true);
-  const tooggleMode = () => {
-    setDarkMode(!darkMode);
-  };
-  return (
-    <div className={darkMode ? "container-nav-dark" : "container-nav"}>
-      {/* logo o el nombre de la empresa  */}
-      <h3>Comision-71835</h3>
-      {/* al medio un listado de categorias clickeables */}
-      <ul>
-        <li>Todas</li>
-        <li>Urbanas</li>
-        <li>Deportivas</li>
-      </ul>
-      <button onClick={tooggleMode}>cambiar modo</button>
-      <CartWidget />
-    </div>
-  );
-};
+div {
+  background-color: #1f1f1f; /* Fondo oscuro */
+  color: #f1f1f1; /* Texto en gris claro */
+  padding: 15px 30px; /* Espaciado alrededor del contenido */
+  display: flex; /* Usar flexbox para alinear elementos */
+  justify-content: center; /* Centrar horizontalmente todos los elementos */
+  align-items: center; /* Centrar verticalmente todos los elementos */
+  border-bottom: 3px solid #00bfae; /* Línea de borde inferior verde brillante */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para un efecto de profundidad */
+}
 
-export default Navbar;
+/* Contenedor de los elementos dentro del Navbar */
+.navbar-content {
+  display: flex; /* Usar flexbox para alinear elementos */
+  align-items: center; /* Centrar verticalmente elementos */
+}
+
+/* Título del Navbar */
+h2 {
+  font-size: 26px; /* Tamaño del texto */
+  margin: 0 30px; /* Espaciado horizontal alrededor del título */
+  font-family: "Press Start 2P", cursive; /* Fuente inspirada en juegos retro */
+  color: #00bfae; /* Color del texto verde brillante */
+}
+
+/* Lista de elementos */
+ul {
+  list-style: none; /* Eliminar puntos de lista */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  display: flex; /* Usar flexbox para lista horizontal */
+}
+
+/* Elementos de la lista */
+li {
+  margin: 0 15px; /* Espaciado entre elementos */
+  cursor: pointer; /* Mostrar cursor de mano al pasar sobre el elemento */
+  font-size: 18px; /* Tamaño del texto */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Cambia el color del texto al pasar el cursor sobre el elemento */
+li:hover {
+  color: #00bfae; /* Color verde brillante al pasar el cursor */
+}
+
+/* Icono */
+svg {
+  font-size: 30px; /* Tamaño del icono */
+  color: #00bfae; /* Color del icono verde brillante */
+}
