@@ -1,0 +1,29 @@
+/* Contenedor principal de ItemListContainer */
+.item-list-container {
+  padding: 20px;
+  text-align: center; /* Centrar el contenido dentro del contenedor */
+}
+
+/* Estilo del título */
+.item-list-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de las tarjetas de producto */
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+/* Estilo para el saludo */
+.item-list-container h4 {
+  background-color: #007bff; /* Fondo azul */
+  color: #ffffff; /* Texto en blanco */
+  padding: 10px;
+  border-radius: 5px; /* Bordes redondeados */
+  display: inline-block; /* Ajusta el tamaño al contenido */
+  margin-top: 20px; /* Espaciado superior */
+}

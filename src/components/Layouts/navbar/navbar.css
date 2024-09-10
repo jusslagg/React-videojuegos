@@ -1,4 +1,4 @@
-div {
+.navbar {
   background-color: #1f1f1f; /* Fondo oscuro */
   color: #f1f1f1; /* Texto en gris claro */
   padding: 15px 30px; /* Espaciado alrededor del contenido */
@@ -11,12 +11,12 @@ div {
 
 /* Contenedor de los elementos dentro del Navbar */
 .navbar-content {
-  display: flex; /* Usar flexbox para alinear elementos */
-  align-items: center; /* Centrar verticalmente elementos */
+  display: flex; /* Usar flexbox para alinear los elementos internos */
+  align-items: center; /* Centrar verticalmente los elementos internos */
 }
 
 /* Título del Navbar */
-h2 {
+.navbar h2 {
   font-size: 26px; /* Tamaño del texto */
   margin: 0 30px; /* Espaciado horizontal alrededor del título */
   font-family: "Press Start 2P", cursive; /* Fuente inspirada en juegos retro */
@@ -24,15 +24,15 @@ h2 {
 }
 
 /* Lista de elementos */
-ul {
-  list-style: none; /* Eliminar puntos de lista */
-  margin: 0; /* Eliminar márgenes */
-  padding: 0; /* Eliminar relleno */
-  display: flex; /* Usar flexbox para lista horizontal */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 /* Elementos de la lista */
-li {
+.navbar li {
   margin: 0 15px; /* Espaciado entre elementos */
   cursor: pointer; /* Mostrar cursor de mano al pasar sobre el elemento */
   font-size: 18px; /* Tamaño del texto */
@@ -40,12 +40,12 @@ li {
 }
 
 /* Cambia el color del texto al pasar el cursor sobre el elemento */
-li:hover {
+.navbar li:hover {
   color: #00bfae; /* Color verde brillante al pasar el cursor */
 }
 
 /* Icono */
-svg {
+.navbar svg {
   font-size: 30px; /* Tamaño del icono */
   color: #00bfae; /* Color del icono verde brillante */
 }
