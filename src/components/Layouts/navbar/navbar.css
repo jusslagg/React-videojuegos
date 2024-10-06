@@ -18,29 +18,25 @@
 
 /* Estilo para el logo */
 .game-sphere-logo {
-  font-size: 32px; /* Tamaño del texto del logo */
+  font-size: 36px; /* Tamaño del texto del logo */
   font-weight: bold; /* Negrita */
   color: #00bfae; /* Color del texto */
   text-decoration: none; /* Sin subrayado */
   margin-right: 30px; /* Espaciado a la derecha del logo */
-  transition: color 0.3s ease; /* Transición suave para el color */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: rgba(0, 191, 174, 0.1); /* Fondo suave */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  transition: background-color 0.3s ease; /* Transición suave para el fondo */
 }
 
 /* Efecto hover para el logo */
 .game-sphere-logo:hover {
-  color: #f1f1f1; /* Color del texto al pasar el cursor */
   background-color: rgba(0, 191, 174, 0.2); /* Fondo suave al hacer hover */
-  padding: 5px 10px; /* Añadir padding al hover para efecto de resaltado */
-  border-radius: 5px; /* Bordes redondeados en hover */
+  color: #f1f1f1; /* Cambiar color del texto al pasar el cursor */
 }
 
-.navbar h2 {
-  font-size: 26px; /* Tamaño del texto */
-  margin: 0 30px; /* Espaciado horizontal alrededor del título */
-  font-family: "Press Start 2P", cursive; /* Fuente inspirada en juegos retro */
-  color: #00bfae; /* Color del texto verde brillante */
-}
-
+/* Estilos para la lista de categorías */
 .navbar ul {
   list-style: none; /* Sin viñetas */
   margin: 0; /* Sin margen */
@@ -51,7 +47,6 @@
 .navbar li {
   margin: 0 15px; /* Espaciado entre elementos */
   cursor: pointer; /* Mostrar cursor de mano al pasar sobre el elemento */
-  font-size: 18px; /* Tamaño del texto */
 }
 
 /* Estilo para los enlaces */

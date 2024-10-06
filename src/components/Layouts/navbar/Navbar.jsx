@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <div className={`navbar ${darkMode ? "dark" : ""}`}>
       <div className="navbar-content">
-        {/* Enlace a la página principal */}
-        <Link to={categories[0].path} className="game-sphere-logo">
-          {categories[0].title}
+        {/* Enlace a la página principal con el logo "GameSphere" */}
+        <Link to="/" className="game-sphere-logo">
+          GameSphere
         </Link>
 
         {/* Listado de categorías clickeables */}
