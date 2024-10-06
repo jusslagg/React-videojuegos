@@ -1,19 +1,43 @@
+import { useState } from "react";
 import CartWidget from "../../common/cartWidget/CartWidget";
-import "./navbar.css";
+import "./Navbar.css";
+import { categories } from "./categories";
+import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${darkMode ? "dark" : ""}`}>
       <div className="navbar-content">
-        <h2>GameSphere</h2>
+        {/* Enlace a la página principal */}
+        <Link to={categories[0].path} className="game-sphere-logo">
+          {categories[0].title}
+        </Link>
+
+        {/* Listado de categorías clickeables */}
         <ul>
-          <li>Xbox</li>
-          <li>Playstation</li>
-          <li>Nintendo</li>
-          <li>PC</li>
+          {categories.slice(1).map(({ title, path }) => (
+            <li key={title}>
+              <Link to={path}>{title}</Link>
+            </li>
+          ))}
         </ul>
-        <CartWidget />
+
+        <Link to="/cart">
+          <CartWidget />
+        </Link>
+
+        <button onClick={toggleMode} className="toggle-button">
+          {darkMode ? "🌙" : "☀️"}
+        </button>
       </div>
     </div>
   );
 };
+
+export default Navbar;

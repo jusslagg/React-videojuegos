@@ -1,21 +1,39 @@
+/* Estilos generales para la barra de navegación */
 .navbar {
-  background-color: #1f1f1f; /* Fondo oscuro */
-  color: #f1f1f1; /* Texto en gris claro */
+  background-color: #ffffff; /* Fondo claro por defecto */
+  color: #333333; /* Texto oscuro */
   padding: 15px 30px; /* Espaciado alrededor del contenido */
   display: flex; /* Usar flexbox para alinear elementos */
   justify-content: center; /* Centrar horizontalmente todos los elementos */
   align-items: center; /* Centrar verticalmente todos los elementos */
   border-bottom: 3px solid #00bfae; /* Línea de borde inferior verde brillante */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para un efecto de profundidad */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el fondo y texto */
 }
 
-/* Contenedor de los elementos dentro del Navbar */
 .navbar-content {
   display: flex; /* Usar flexbox para alinear los elementos internos */
   align-items: center; /* Centrar verticalmente los elementos internos */
 }
 
-/* Título del Navbar */
+/* Estilo para el logo */
+.game-sphere-logo {
+  font-size: 32px; /* Tamaño del texto del logo */
+  font-weight: bold; /* Negrita */
+  color: #00bfae; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  margin-right: 30px; /* Espaciado a la derecha del logo */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Efecto hover para el logo */
+.game-sphere-logo:hover {
+  color: #f1f1f1; /* Color del texto al pasar el cursor */
+  background-color: rgba(0, 191, 174, 0.2); /* Fondo suave al hacer hover */
+  padding: 5px 10px; /* Añadir padding al hover para efecto de resaltado */
+  border-radius: 5px; /* Bordes redondeados en hover */
+}
+
 .navbar h2 {
   font-size: 26px; /* Tamaño del texto */
   margin: 0 30px; /* Espaciado horizontal alrededor del título */
@@ -23,29 +41,85 @@
   color: #00bfae; /* Color del texto verde brillante */
 }
 
-/* Lista de elementos */
 .navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+  list-style: none; /* Sin viñetas */
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
+  display: flex; /* Flexbox para alinear horizontalmente */
 }
 
-/* Elementos de la lista */
 .navbar li {
   margin: 0 15px; /* Espaciado entre elementos */
   cursor: pointer; /* Mostrar cursor de mano al pasar sobre el elemento */
   font-size: 18px; /* Tamaño del texto */
+}
+
+/* Estilo para los enlaces */
+.navbar a {
+  color: #00bfae; /* Color del texto de los enlaces */
+  text-decoration: none; /* Quitar el subrayado */
   transition: color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
-/* Cambia el color del texto al pasar el cursor sobre el elemento */
-.navbar li:hover {
-  color: #00bfae; /* Color verde brillante al pasar el cursor */
+/* Cambia el color del texto al pasar el cursor sobre el enlace */
+.navbar a:hover {
+  color: #f1f1f1; /* Color de texto al pasar el cursor */
+  background-color: #00bfae; /* Fondo verde brillante al hacer hover */
+  padding: 5px 10px; /* Añadir padding al hover para efecto de resaltado */
+  border-radius: 5px; /* Bordes redondeados en hover */
 }
 
-/* Icono */
+/* Estilo para los iconos */
 .navbar svg {
   font-size: 30px; /* Tamaño del icono */
   color: #00bfae; /* Color del icono verde brillante */
+}
+
+.toggle-button {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: #00bfae; /* Color del botón */
+  cursor: pointer; /* Mostrar cursor de mano */
+  font-size: 1.5rem; /* Tamaño de la fuente */
+  padding: 10px 15px; /* Espaciado interno del botón */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para el botón */
+.toggle-button:hover {
+  background-color: rgba(
+    0,
+    191,
+    174,
+    0.2
+  ); /* Color de fondo suave al pasar el cursor */
+}
+
+/* Estilos para el modo oscuro */
+.dark {
+  background-color: #121212; /* Fondo oscuro para el modo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Cambios de color en el modo oscuro */
+.dark .navbar {
+  background-color: #1f1f1f; /* Fondo ligeramente más claro en modo oscuro */
+  color: #f1f1f1; /* Texto en gris claro */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra ligera más clara en modo oscuro */
+}
+
+/* Cambios de color para los enlaces en modo oscuro */
+.dark .navbar a {
+  color: #00bfae; /* Mantener el color de los enlaces */
+}
+
+.dark .navbar a:hover {
+  color: #121212; /* Color de texto en modo oscuro al hacer hover */
+  background-color: #00bfae; /* Fondo verde brillante al hacer hover en modo oscuro */
+  padding: 5px 10px; /* Añadir padding al hover para efecto de resaltado */
+  border-radius: 5px; /* Bordes redondeados en hover */
+}
+
+.dark .toggle-button {
+  color: #00bfae; /* Color del botón en modo oscuro */
 }
