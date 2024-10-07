@@ -8,8 +8,6 @@ const ItemListContainer = () => {
 
   const { categoryName } = useParams(); // {} -- { categoryName }
   console.log(categoryName);
-  // va ser falsy cuando este en home --> todos los productos
-  // va ser truthy cuando estemos en una category ---> parte de los productos
 
   useEffect(() => {
     const filteredProducts = products.filter(
@@ -29,7 +27,7 @@ const ItemListContainer = () => {
         setItems(response);
       })
       .catch((error) => {
-        console.log("entro en el catch ", error);
+        "entro en el catch ", error;
       });
   }, [categoryName]);
 

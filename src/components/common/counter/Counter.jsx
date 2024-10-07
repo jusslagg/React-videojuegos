@@ -14,7 +14,7 @@ const Counter = ({ contador, sumar, restar }) => {
       <Button
         variant="outlined"
         onClick={() => {
-          console.log("se agrego al carrito");
+          alert("se agrego al carrito");
         }}
       >
         Agregar al carrito
