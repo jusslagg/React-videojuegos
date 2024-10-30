@@ -1,12 +1,15 @@
 import React from "react";
-import CounterContainer from "../../common/counter/CounterContainer";
+import ItemDetailCard from "../../common/itemDetailCard.jsx/ItemDetailCard";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, addOn, totalAdded }) => {
   return (
-    <div>
-      <h1>{item.title}</h1>
-
-      <CounterContainer />
+    <div className="h-fit my-5 mx-2">
+      <ItemDetailCard
+        item={item}
+        {...item}
+        addOn={addOn}
+        totalAdded={totalAdded}
+      />
     </div>
   );
 };

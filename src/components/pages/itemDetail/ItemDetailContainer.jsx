@@ -1,21 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../../../productsMock";
-import { useParams, useNavigate } from "react-router-dom";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext.jsx";
+import { db } from "../../../configFirebase.js";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
+  const { addToCart, cart, getTotalQuantityById } = useContext(CartContext);
 
-  const { id } = useParams();
+  const { id } = useParams(); // devuelve un objeto
+
+  let totalAdded = getTotalQuantityById(id);
 
   useEffect(() => {
-    let product = products.find((product) => product.id === id);
-    if (product) {
-      setItem(product);
-    }
+    let productCollection = collection(db, "products");
+    let refDoc = doc(productCollection, id);
+    let getProduct = getDoc(refDoc);
+    getProduct.then((res) => setItem({ ...res.data(), id: res.id }));
   }, [id]);
 
-  return <ItemDetail item={item} />;
+  const addOn = (quantity) => {
+    let productoParaELCarrito = { ...item, quantity };
+    addToCart(productoParaELCarrito);
+  };
+  return (
+    <>
+      <ItemDetail item={item} addOn={addOn} totalAdded={totalAdded} />
+    </>
+  );
 };
 
 export default ItemDetailContainer;

@@ -1,37 +1,23 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
-import "./productCard.css";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ title, price, imageUrl, description, id }) => {
+const ProductCard = ({ id, title, price, stock, imageUrl, category }) => {
   return (
-    <Card sx={{ width: 350, height: 320 }}>
-      <CardMedia sx={{ height: 140 }} image={imageUrl} title="green iguana" />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          {description}
-        </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          {price}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Link to={`/productDetail/${id}`}>
-          <Button variant="outlined" size="small">
-            Ver detalle
-          </Button>
-        </Link>
-      </CardActions>
-    </Card>
+    <div className="card card-side md:card card-compact bg-base-100 w-80 md:w-80 shadow-xl">
+      <figure>
+        <img src={imageUrl} alt={title} />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title text-xl xl:text-2xl">{title}</h2>
+        <p className="font-bold xl:text-xl">${price} CLP</p>
+        <p className="font-semibold">Stock: {stock}</p>
+        <div className="card-actions justify-between">
+          <div className="badge badge-outline capitalize">{category}</div>
+          <Link to={`/ProductDetail/${id}`}>
+            <button className="btn btn-primary">Ver más</button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -1,40 +1,77 @@
-import { useState } from "react";
 import CartWidget from "../../common/cartWidget/CartWidget";
-import "./navbar.css";
-import { categories } from "./categories";
+import ThemeController from "../../common/themeController/ThemeController";
 import { Link } from "react-router-dom";
+import { categories } from "./categories.js";
+import { LogoContext } from "../../../context/LogoContext.jsx";
+import { useContext } from "react";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleMode = () => {
-    setDarkMode(!darkMode);
-  };
-
+  const { currentLogo } = useContext(LogoContext);
   return (
-    <div className={`navbar ${darkMode ? "dark" : ""}`}>
-      <div className="navbar-content">
-        {/* Enlace a la página principal con el logo "GameSphere" */}
-        <Link to="/" className="game-sphere-logo">
-          GameSphere
+    <div className="navbar bg-base-200">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          >
+            <details className="font-bold">
+              <summary>Productos por categorias</summary>
+              <ul className="p-2">
+                {categories.map(({ title, path }) => (
+                  <li key={title}>
+                    <Link key={title} to={path} className="btn btn-ghost p-0">
+                      {title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </ul>
+        </div>
+        <Link to="/" className="btn btn-ghost text-xl p-0">
+          <img src={currentLogo} alt="logo" className="w-16" />
         </Link>
-
-        {/* Listado de categorías clickeables */}
-        <ul>
-          {categories.slice(1).map(({ title, path }) => (
-            <li key={title}>
-              <Link to={path}>{title}</Link>
-            </li>
-          ))}
+      </div>
+      <div className="navbar-center hidden lg:flex z-10">
+        <ul className="menu menu-horizontal px-1 ">
+          <li>
+            <details className="font-bold">
+              <summary className="text-base">Productos por categorias</summary>
+              <ul className="p-2 bg-base-200">
+                {categories.map(({ title, path }) => (
+                  <li key={title}>
+                    <Link key={title} to={path} className="btn btn-ghost p-0">
+                      {title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </li>
         </ul>
-
-        <Link to="/cart">
+      </div>
+      <div className="navbar-end">
+        <ThemeController />
+        <Link to="/Cart">
           <CartWidget />
         </Link>
-
-        <button onClick={toggleMode} className="toggle-button">
-          {darkMode ? "🌙" : "☀️"}
-        </button>
       </div>
     </div>
   );
