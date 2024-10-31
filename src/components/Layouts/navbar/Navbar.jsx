@@ -32,7 +32,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <details className="font-bold">
-              <summary>PJuegos por consola</summary>
+              <summary>Juegos por consola</summary>
               <ul className="p-2">
                 {categories.map(({ title, path }) => (
                   <li key={title}>
