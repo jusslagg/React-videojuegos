@@ -54,7 +54,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 ">
           <li>
             <details className="font-bold">
-              <summary className="text-base">Productos por categorias</summary>
+              <summary className="text-base">Juegos por consola</summary>
               <ul className="p-2 bg-base-200">
                 {categories.map(({ title, path }) => (
                   <li key={title}>
