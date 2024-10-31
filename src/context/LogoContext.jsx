@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
-import logo from "/logoPanaderia.svg";
-import logoSecondary from "/logoPanaderiaSecondary.svg";
-import kannel from "/kanelbullarImg.png";
-import kannelSecondary from "/kanellbullarImgSecondary.png";
+import logo from "/logosphere.png";
+import logoSecondary from "/logosphere.svg";
+import kannel from "/sphere.png";
+import kannelSecondary from "/sphere.png";
 
 export const LogoContext = createContext();
 

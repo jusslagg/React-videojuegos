@@ -25,18 +25,20 @@ const ItemListContainer = () => {
     });
   }, [categoryName]);
 
-  // const agregarProductos = () => {
-  //   products.forEach((product) => {
-  //     addDoc(collection(db, "products"), product);
+  //const agregarProductos = () => {
+  //products.forEach((product) => {
+  //  addDoc(collection(db, "products"), product);
   //   });
   // };
   //crear una promesa
   return (
     <>
       <ItemList items={items} />
-      {/* <button className="btn" onClick={agregarProductos}>
-        agregar productos
-      </button> */}
+      {/*
+        <button className="btn" onClick={agregarProductos}>
+          agregar productos
+        </button>
+     */}
     </>
   );
 };

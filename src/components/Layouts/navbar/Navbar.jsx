@@ -32,7 +32,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <details className="font-bold">
-              <summary>Productos por categorias</summary>
+              <summary>PJuegos por consola</summary>
               <ul className="p-2">
                 {categories.map(({ title, path }) => (
                   <li key={title}>
@@ -46,7 +46,8 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl p-0">
-          <img src={currentLogo} alt="logo" className="w-16" />
+          <img src={currentLogo} alt="logo" className="w-24" />{" "}
+          {/* Cambia aquí */}
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex z-10">

@@ -81,7 +81,7 @@ const Cart = ({ cart, deleteProductById, totalQuantity, total, clearCart }) => {
           </div>
           <div>
             <h2 className="lg:text-2xl font-semibold mb-3">
-              Toca a Kannel para buscar productos
+              Dile a Sphere que quieres volver
             </h2>
           </div>
         </div>
