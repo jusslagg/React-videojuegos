@@ -1,7 +1,7 @@
 import CartWidget from "../../common/cartWidget/CartWidget";
 import ThemeController from "../../common/themeController/ThemeController";
 import { Link } from "react-router-dom";
-import { categories } from "./categories.js";
+import { categories } from "./categories";
 import { LogoContext } from "../../../context/LogoContext.jsx";
 import { useContext } from "react";
 
